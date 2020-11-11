@@ -12,9 +12,13 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@features/*": ["src/app/modules/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@configs/*": ["src/configs/*"],
+      "@angular/core/src/metadata/*": ["./node_modules/@angular/core"]
+    }
   }
 }
