@@ -1,11 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'selector-name'
+  name: 'selector-name',
 })
-
-export class NamePipe implements PipeTransform {
-  transform(value: any, ...args: any[]): any {
-
-  }
+export class MyPipe implements PipeTransform {
+  transform(value: any, ...args: any[]): any {}
 }

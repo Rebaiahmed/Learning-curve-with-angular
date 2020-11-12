@@ -1,5 +1,3 @@
 class User {
-  constructor(parameters) {
-
-  }
+  constructor(parameters) {}
 }
