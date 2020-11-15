@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SuperUserComponent } from './dashboard/super-user/super-user.component';
+import { AdminGuard } from '@core/guards/admin-guard';
 
 const routes: Routes = [
   {
@@ -10,10 +12,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivateChild: [AdminGuard],
     children: [
       {
-        path: 'test',
-        component: DashboardComponent,
+        path: 'super-user',
+        component: SuperUserComponent,
       },
     ],
   },

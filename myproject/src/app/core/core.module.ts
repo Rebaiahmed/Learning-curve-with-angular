@@ -3,11 +3,12 @@ import { NgModule, Optional } from '@angular/core';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { httpInterceptorsProviders } from './interceptors';
+import { authGuardServices } from './guards';
 @NgModule({
   imports: [],
   exports: [],
   declarations: [],
-  providers: [httpInterceptorsProviders],
+  providers: [httpInterceptorsProviders, authGuardServices],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() core: CoreModule) {
