@@ -4,8 +4,9 @@ import {
   HttpEvent,
   HttpHandler,
   HttpRequest,
+  HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -32,6 +33,8 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error && error.status === 401) {
+          // 401 errors are most likely going to be because we have an expired token that we need to refresh.
+          // ----------Refresh token work--------//
         } else {
           return throwError(error);
         }

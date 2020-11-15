@@ -10,6 +10,6 @@ export class LoginComponent implements OnInit {
   constructor(private _router: Router) {}
 
   ngOnInit(): void {
-    this._router.navigate(['admin/dashboard']);
+    // this._router.navigate(['admin/dashboard']);
   }
 }
