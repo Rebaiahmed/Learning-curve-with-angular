@@ -17,10 +17,6 @@
 - [Angular ngrx](#Angular)
 - [Angular performance_optimisation](#Angular)
 
+## Angular Lazy loading lock_with_ink_pen:
 
-
-
-## Angular Lazy loading  lock_with_ink_pen:
-
-
-
+## Angular Sub_Routing lock_with_ink_pen:
