@@ -49,7 +49,8 @@ export class LoginComponent implements OnInit {
     this.toArray();
     this.operationMapTo();
     this.reduceOperation();*/
-    this.taoOperator();
+    //this.taoOperator();
+    this.simpleMapOperator();
   }
 
   private exampleForkJoins() {
@@ -210,5 +211,26 @@ export class LoginComponent implements OnInit {
       tap((val) => console.log(`AFTER MAP: ${val}`))
     );
     const subscribe = example.subscribe((val) => console.log(val));
+  }
+
+  private simpleMapOperator() {
+    const namesObseravble = of('Ahmed', 'Rebai');
+
+    namesObseravble
+      .pipe(map((name) => `${name} is awesome !`))
+      .subscribe((result) => console.log(`${result}`));
+  }
+
+  private swichMapOpereator() {
+    const frameworkTweetObservable = from(['Backbone', 'Angular']).pipe(
+      tap((fwName) => console.log(`*** "${fwName}" tweet pops up ***`))
+    );
+
+    frameworkTweetObservable
+      .pipe(
+        map((framework) => getAgency(framework)),
+        switchMap((agency) => agency.getRecruitsObservable())
+      )
+      .subscribe((recruit) => console.log(recruit));
   }
 }
