@@ -6,7 +6,7 @@ export const COUNTER_STATE_NAME = 'counter';
 export const selectCounter =
   createFeatureSelector<CounterState>(COUNTER_STATE_NAME);
 
-export const counterSelector = createSelector(
+export const getCount = createSelector(
   selectCounter,
   (state: CounterState) => state.counter
 );

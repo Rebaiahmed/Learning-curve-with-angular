@@ -1,11 +1,12 @@
-
-
+<app-header></app-header>
+<app-loading-spinner *ngIf="showLoading | async"></app-loading-spinner>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-
-     <h1> Hello counter ngrx app  !</h1>
-     <app-counter></app-counter>
+      <div class="alert alert-danger" *ngIf="errorMessage | async as error">
+        {{ error }}
+      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
